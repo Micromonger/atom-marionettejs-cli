@@ -22,7 +22,7 @@ Add menu items to your Atom (Packages->atom-marionettejs-cli)
   - Behavior
   - Object
   - Router
-- Set module formats (RequireJS, CommonJS, ES6). Setting module type you set module format for generated files.
+- Set module formats (RequireJS, CommonJS, ES6). Setting module type you choose module format for generated files.
 
 
 
