@@ -1,0 +1,30 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Generate marionettejs application'
+      'command': 'atom-marionettejs-cli:generate-app'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'atom-marionettejs-cli'
+      'submenu': [
+        {
+          'label': 'Generate marionettejs application'
+          'command': 'atom-marionettejs-cli:generate-app'
+        }
+        {
+          'label': 'Generate marionettejs file'
+          'command': 'atom-marionettejs-cli:generate-file'
+        }
+        {
+          'label': 'Set type'
+          'command': 'atom-marionettejs-cli:set-type'
+        }
+      ]
+    ]
+  }
+]

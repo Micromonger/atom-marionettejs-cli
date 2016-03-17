@@ -1,0 +1,29 @@
+{
+  "name": "atom-marionettejs-cli",
+  "main": "./lib/atom-marionettejs-cli",
+  "author": "denar90",
+  "version": "0.0.1",
+  "description": "MarionetteJS CLI package for atom",
+  "keywords": [
+    "atom",
+    "backbone",
+		"marionette",
+		"cli",
+		"es6",
+		"requirejs",
+		"javacript",
+		"front-end",
+		"web",
+		"development"
+  ],
+  "repository": "https://github.com/denar90/atom-marionettejs-cli",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "loophole": "~1.1.0",
+    "marionette-cli": "~0.3.1"
+  }
+}
