@@ -24,9 +24,24 @@ Add menu items to your Atom (Packages->atom-marionettejs-cli)
   - Router
 - Set module formats (RequireJS, CommonJS, ES6). Setting module type you choose module format for generated files.
 
-
-
 Note: Files and app will be placed in root of your project
+
+###Example
+
+####Generate app
+- Run `Packages->atom-marionettejs-cli->generate marionettejs application`
+- Application will be cloned into your project root directory.
+
+####Generate app
+- Run `Packages->atom-marionettejs-cli->generate marionettejs file->layout`
+- Layout file with name `marionette--layout.js` will be placed into your project root directory.<br/>
+File content:<br/>
+```
+export default Marionette.LayoutView.extend({
+	//stuff
+	//Doc - http://marionettejs.com/docs/v2.4.4/marionette.layoutview.html
+});
+```
 
 ###TODO
 - write test
