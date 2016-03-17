@@ -35,11 +35,35 @@ Note: Files and app will be placed in root of your project
 ####Generate app
 - Run `Packages->atom-marionettejs-cli->generate marionettejs file->layout`
 - Layout file with name `marionette--layout.js` will be placed into your project root directory.<br/>
-File content:<br/>
+`ES6` file content:<br/>
 ```
 export default Marionette.LayoutView.extend({
 	//stuff
 	//Doc - http://marionettejs.com/docs/v2.4.4/marionette.layoutview.html
+});
+```
+
+`CommonJS` file content:<br/>
+```
+"use strict";
+var LayoutView = Marionette.LayoutView.extend({
+	//stuff
+	//Doc - http://marionettejs.com/docs/v2.4.4/marionette.layoutview.html
+});
+
+module.exports = LayoutView;
+```
+
+`RequireJS` file content:<br/>
+```
+define('layout', ['marionette'], function (Marionette) {
+	"use strict";
+	var LayoutView = Marionette.LayoutView.extend({
+		//stuff
+		//Doc - http://marionettejs.com/docs/v2.4.4/marionette.layoutview.html
+	});
+
+	return LayoutView;
 });
 ```
 
