@@ -2,7 +2,7 @@
   "name": "atom-marionettejs-cli",
   "main": "./lib/atom-marionettejs-cli",
   "author": "denar90",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MarionetteJS CLI package for atom",
   "keywords": [
     "atom",
