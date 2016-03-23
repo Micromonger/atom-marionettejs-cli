@@ -35,11 +35,14 @@ File will be placed in root of your project if any files were opened in your edi
 
 ####Generate app
 - Run `Packages->atom-marionettejs-cli->generate marionettejs application`
-- Application will be cloned into your project root directory.
 
-####Generate app
+Or
+
+- `Click right mouse btn -> generate marionettejs application`
+
+####Generate file
 - Run `Packages->atom-marionettejs-cli->generate marionettejs file->layout`
-- Layout file with name `marionette--layout.js` will be placed into your project root directory.
+- Layout file with name `marionette--layout.js` will be created.
 
 `ES6` file content:
 
