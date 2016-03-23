@@ -70,7 +70,7 @@ module.exports = LayoutView;
 `RequireJS` file content:
 
 ```
-define('layout', ['marionette'], function (Marionette) {
+define(['marionette'], function (Marionette) {
 	"use strict";
 	var LayoutView = Marionette.LayoutView.extend({
 		//stuff
