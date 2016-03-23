@@ -13,4 +13,4 @@ All notable changes to this project will be documented in this file.
 ###Added
 - Features to generate files
 
-[0.2.0]: https://github.com/denar90/marionette-cli/compare/v0.1.1...v0.2.0
+[0.2.0]: https://github.com/denar90/atom-marionettejs-cli/compare/v0.1.1...v0.2.0
