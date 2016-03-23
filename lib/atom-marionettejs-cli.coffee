@@ -1,6 +1,5 @@
 AtomMarionettejsCliView = require './atom-marionettejs-cli-view'
 {CompositeDisposable, BufferedNodeProcess} = require 'atom'
-{Directory} = require 'atom'
 filePrefix = 'marionette-'
 cli = require 'marionette-cli/lib/cli'
 
