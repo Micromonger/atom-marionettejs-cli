@@ -1,16 +1,56 @@
 {SelectListView} = require 'atom-space-pen-views'
 items =
-  'type': ['rjs', 'cjs', 'es6']
+  'type': [
+    {
+      label: 'ES6'
+      command: 'es6'
+    },
+    {
+      label: 'CommonJS'
+      command: 'cjs'
+    },
+    {
+      label: 'RequireJS'
+      command: 'rjs'
+    }
+  ],
   'file': [
-    '--layout',
-    '--collection'
-    '--model',
-    '--router',
-    '--object',
-    '--itemView',
-    '--behavior',
-    '--collectionView',
-    '--compositeView'
+    {
+      label: 'Layout'
+      command: '--layout'
+    },
+    {
+      label: 'Collection'
+      command: '--collection'
+    },
+    {
+      label: 'Model'
+      command: '--model'
+    },
+    {
+      label: 'Router'
+      command: '--router'
+    },
+    {
+      label: 'Object'
+      command: '--object'
+    },
+    {
+      label: 'Item View'
+      command: '--itemView'
+    },
+    {
+      label: 'Collection View'
+      command: '--collectionView'
+    },
+    {
+      label: 'Composite View'
+      command: '--compositeView'
+    },
+    {
+      label: 'Behavior'
+      command: '--behavior'
+    },
   ]
 
 module.exports =
@@ -18,7 +58,7 @@ module.exports =
     mode: null
 
     viewForItem: (item) ->
-      "<li>#{item}</li>"
+      "<li data-command='#{item.command}'>#{item.label}</li>"
 
     showModalPanel: (@mode) ->
       @panel ?= atom.workspace.addModalPanel(item: this, visible: false)
@@ -29,3 +69,7 @@ module.exports =
 
     cancelled: ->
       @panel.hide()
+
+    getCommand: ->
+      selectedItem = this.getSelectedItemView();
+      return selectedItem.data().command;

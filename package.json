@@ -2,7 +2,7 @@
   "name": "atom-marionettejs-cli",
   "main": "./lib/atom-marionettejs-cli",
   "author": "denar90",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "MarionetteJS CLI package for atom",
   "keywords": [
     "atom",
@@ -10,7 +10,7 @@
     "marionette",
     "cli",
     "es6",
-    "requirejs",
+    "commonjs",
     "javacript",
     "front-end",
     "web",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.0",
-    "loophole": "~1.1.0",
-    "marionette-cli": "~0.3.1"
+    "marionette-cli": "~0.3.4"
   }
 }

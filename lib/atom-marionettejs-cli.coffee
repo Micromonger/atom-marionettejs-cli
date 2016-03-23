@@ -1,13 +1,26 @@
 AtomMarionettejsCliView = require './atom-marionettejs-cli-view'
 {CompositeDisposable, BufferedNodeProcess} = require 'atom'
-{allowUnsafeEval, allowUnsafeNewFunction} = require 'loophole'
-# loophole was used because 'marionette-cli' package use rigger
-# to build template rigger uses _.temlate() method from underscore
-# _.temlate() use eval, atom genereate arror for this -
-# Refused to evaluate a string as JavaScript because 'unsafe-eval'....
-# solution https://discuss.atom.io/t/getting-unsafe-eval-with-loophole/16580/3
-cli = allowUnsafeNewFunction -> require 'marionette-cli/lib/cli'
 filePrefix = 'marionette-'
+cli = require 'marionette-cli/lib/cli'
+
+getPath = ->
+  editor = atom.workspace.getActivePaneItem()
+  file = editor?.buffer.file
+  projectPath = atom.project.getPaths()[0]
+
+  # if opened file or project doesn't exist
+  if !file && !projectPath
+    throw new Error ('Create project or open some file')
+
+  # get path of opened file
+  path = editor?.buffer.file.path
+  # if no opened tabs
+  if !path
+    return projectPath
+
+  regexp = /(.*\/).*/g
+  # get path to file
+  regexp.exec(path)[1]
 
 module.exports =
   modalPanel: null
@@ -22,12 +35,14 @@ module.exports =
       'atom-marionettejs-cli:generate-file': => @attach('file')
       'atom-marionettejs-cli:set-type': => @attach('type')
 
-    @modalPanel.confirmed = (value) ->
+    @modalPanel.confirmed = ->
+      path = getPath()
+      command = @getCommand();
       if @mode is 'file'
-        fileName = filePrefix + value;
-        args = ['g', value, fileName, atom.project.getPaths()[0]];
+        fileName = filePrefix + command
+        args = ['g', command, fileName, path]
       else
-        args = ['s', value];
+        args = ['s', command];
 
       cli.run(args);
       @panel.hide()
@@ -44,5 +59,5 @@ module.exports =
         @modalPanel.showModalPanel(@mode)
 
   generateApp: ->
-    appPath = atom.project.getPaths()[0] + '/app'
+    appPath = getPath() + '/app'
     cli.run(['new', appPath]);
