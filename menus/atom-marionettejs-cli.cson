@@ -10,7 +10,7 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'atom-marionettejs-cli'
+      'label': 'MarionetteJS CLI'
       'submenu': [
         {
           'label': 'Generate marionettejs application'
